@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-orange: #FFAC1C;
+    --brand-black: #111111;
+    --brand-white: #FFFFFF;
+    --text-primary: #171717;
+    --text-secondary: #666666;
+    --bg-page: #F7F7F7;
+    --bg-card: #FFFFFF;
+    --bg-subtle: #FAFAFA;
+    --border-main: #E5E5E5;
+    --border-subtle: #F0F0F0;
+    --status-approved: #15803d;
+    --status-blocked: #b91c1c;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+    color: #171717;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Montage-style Display Headings (Condensed Bold Editorial Typography) */
+.font-display {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Clean, crisp enterprise scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Restrained Enterprise Badges */
+.badge-threat-blocked {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #B91C1C;
+}
+
+.badge-policy-allowed {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  color: #15803D;
+}
+
+.badge-neutral {
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  color: #4B5563;
+}
+
+.badge-brand-orange {
+  background-color: #FFF7ED;
+  border: 1px solid #FFEDD5;
+  color: #C2410C;
+}
+
+/* UpGuard-inspired crisp enterprise card styling */
+.enterprise-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.enterprise-card:hover {
+  border-color: #D4D4D4;
+}
+
+.interactive-hover {
+  transition: all 180ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
