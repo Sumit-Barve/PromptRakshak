@@ -21,7 +21,7 @@ class AppConfig(BaseModel):
     max_iterations: int = int(os.getenv("AGENT_MAX_ITERATIONS", "5"))
     host: str = os.getenv("BACKEND_HOST", "127.0.0.1")
     port: int = int(os.getenv("BACKEND_PORT", "8000"))
-    db_path: str = os.getenv("DATABASE_PATH", str(Path(__file__).resolve().parent.parent / "aegis.db"))
+    db_path: str = os.getenv("DATABASE_PATH", "/tmp/aegis.db" if os.getenv("VERCEL") else str(Path(__file__).resolve().parent.parent / "aegis.db"))
 
     def is_api_configured(self) -> bool:
         if self.provider == "demo":
